@@ -29,15 +29,23 @@ import { formatarMoeda, formatarData } from "./utils";
 const prompt = promptSync({ sigint: true });
 
 function executarDemonstracaoCompleta(): void {
-  console.log("\n================================================================");
-  console.log("                DEMONSTRAÇÃO DO ECOMMERCE SCTEC                 ");
-  console.log("================================================================\n");
+  console.log(
+    "\n================================================================",
+  );
+  console.log(
+    "                DEMONSTRAÇÃO DO ECOMMERCE SCTEC                 ",
+  );
+  console.log(
+    "================================================================\n",
+  );
 
   // 1. consulta inicial do catálogo e clientes
   console.log("--- 1. LISTAR CLIENTES E PRODUTOS ---");
   console.log("3 CLIENTES PRÉ-CADASTRADOS:");
   readClientes().forEach((c) =>
-    console.log(`  [ID ${c.id}] ${c.nome.toUpperCase()} - E-MAIL: ${c.email.toUpperCase()}`),
+    console.log(
+      `  [ID ${c.id}] ${c.nome.toUpperCase()} - E-MAIL: ${c.email.toUpperCase()}`,
+    ),
   );
 
   console.log("\nPRODUTOS EM ESTOQUE:");
@@ -161,17 +169,29 @@ function executarDemonstracaoCompleta(): void {
   readRelatorioEstoqueBaixo(5);
   readRelatorioPedidosCliente(1);
 
-  console.log("================================================================");
-  console.log("              DEMONSTRAÇÃO CONCLUÍDA COM SUCESSO!               ");
-  console.log("================================================================\n");
+  console.log(
+    "================================================================",
+  );
+  console.log(
+    "              DEMONSTRAÇÃO CONCLUÍDA COM SUCESSO!               ",
+  );
+  console.log(
+    "================================================================\n",
+  );
 }
 
 function menuProdutos(): void {
   let opcao: number;
   do {
-    console.log("\n================================================================");
-    console.log("                       GERENCIAR PRODUTOS                       ");
-    console.log("================================================================");
+    console.log(
+      "\n================================================================",
+    );
+    console.log(
+      "                       GERENCIAR PRODUTOS                       ",
+    );
+    console.log(
+      "================================================================",
+    );
     console.log("1 - LISTAR PRODUTOS");
     console.log("2 - CADASTRAR PRODUTO");
     console.log("3 - BUSCAR PRODUTO POR ID");
@@ -180,7 +200,9 @@ function menuProdutos(): void {
     console.log("6 - ATUALIZAR PRODUTO");
     console.log("7 - REMOVER PRODUTO");
     console.log("0 - VOLTAR AO MENU PRINCIPAL");
-    console.log("================================================================");
+    console.log(
+      "================================================================",
+    );
 
     opcao = Number(prompt("ESCOLHA UMA OPÇÃO: "));
 
@@ -267,7 +289,9 @@ function menuProdutos(): void {
           `ATUALIZANDO "${produto.nome.toUpperCase()}". PRESSIONE ENTER PARA MANTER O VALOR ATUAL.`,
         );
         const novoNome = prompt(`NOVO NOME (${produto.nome.toUpperCase()}): `);
-        const novaCat = prompt(`NOVA CATEGORIA (${produto.categoria.toUpperCase()}): `);
+        const novaCat = prompt(
+          `NOVA CATEGORIA (${produto.categoria.toUpperCase()}): `,
+        );
         const novoPrecoStr = prompt(`NOVO PREÇO (${produto.preco}): `);
         const novoEstoqueStr = prompt(`NOVO ESTOQUE (${produto.estoque}): `);
 
@@ -306,14 +330,22 @@ function menuProdutos(): void {
 function menuClientes(): void {
   let opcao: number;
   do {
-    console.log("\n================================================================");
-    console.log("                       GERENCIAR CLIENTES                       ");
-    console.log("================================================================");
+    console.log(
+      "\n================================================================",
+    );
+    console.log(
+      "                       GERENCIAR CLIENTES                       ",
+    );
+    console.log(
+      "================================================================",
+    );
     console.log("1 - LISTAR CLIENTES");
     console.log("2 - CADASTRAR CLIENTE");
     console.log("3 - BUSCAR CLIENTE");
     console.log("0 - VOLTAR AO MENU PRINCIPAL");
-    console.log("================================================================");
+    console.log(
+      "================================================================",
+    );
 
     opcao = Number(prompt("ESCOLHA UMA OPÇÃO: "));
 
@@ -366,16 +398,24 @@ function menuClientes(): void {
 function menuCarrinho(): void {
   let opcao: number;
   do {
-    console.log("\n================================================================");
-    console.log("                      CARRINHO DE COMPRAS                       ");
-    console.log("================================================================");
+    console.log(
+      "\n================================================================",
+    );
+    console.log(
+      "                      CARRINHO DE COMPRAS                       ",
+    );
+    console.log(
+      "================================================================",
+    );
     console.log("1 - LISTAR ITENS");
     console.log("2 - INCLUIR PRODUTO NO CARRINHO");
     console.log("3 - ALTERAR QUANTIDADE DO ITEM");
     console.log("4 - REMOVER ITEM DO CARRINHO");
     console.log("5 - LIMPAR CARRINHO");
     console.log("0 - VOLTAR AO MENU PRINCIPAL");
-    console.log("================================================================");
+    console.log(
+      "================================================================",
+    );
 
     opcao = Number(prompt("ESCOLHA UMA OPÇÃO: "));
 
@@ -391,7 +431,9 @@ function menuCarrinho(): void {
               `[ID PRODUTO: ${it.produto.id}] ${it.produto.nome.toUpperCase().padEnd(25)} | ${it.quantidade} UN X ${formatarMoeda(it.produto.preco)} = SUBTOTAL: ${formatarMoeda(it.subtotal)}`,
             );
           });
-          console.log("----------------------------------------------------------------");
+          console.log(
+            "----------------------------------------------------------------",
+          );
           console.log(`VALOR TOTAL: ${formatarMoeda(readTotalCarrinho())}`);
         }
         break;
@@ -439,14 +481,22 @@ function menuCarrinho(): void {
 function menuPedidos(): void {
   let opcao: number;
   do {
-    console.log("\n================================================================");
-    console.log("                       GERENCIAR PEDIDOS                        ");
-    console.log("================================================================");
+    console.log(
+      "\n================================================================",
+    );
+    console.log(
+      "                       GERENCIAR PEDIDOS                        ",
+    );
+    console.log(
+      "================================================================",
+    );
     console.log("1 - FINALIZAR PEDIDO ATUAL DO CARRINHO (CREATE)");
     console.log("2 - LISTAR TODOS OS PEDIDOS (READ)");
     console.log("3 - CONSULTAR PEDIDOS POR ID DE CLIENTE (READ)");
     console.log("0 - VOLTAR AO MENU PRINCIPAL");
-    console.log("================================================================");
+    console.log(
+      "================================================================",
+    );
 
     opcao = Number(prompt("ESCOLHA UMA OPÇÃO: "));
 
@@ -509,15 +559,23 @@ function menuPedidos(): void {
 function menuRelatorios(): void {
   let opcao: number;
   do {
-    console.log("\n================================================================");
-    console.log("                     RELATÓRIOS DO SISTEMA                      ");
-    console.log("================================================================");
+    console.log(
+      "\n================================================================",
+    );
+    console.log(
+      "                     RELATÓRIOS DO SISTEMA                      ",
+    );
+    console.log(
+      "================================================================",
+    );
     console.log("1 - RELATÓRIO GERAL DE VENDAS (READ)");
     console.log("2 - RELATÓRIO DE PRODUTOS MAIS VENDIDOS (READ)");
     console.log("3 - RELATÓRIO DE ESTOQUE BAIXO (READ)");
     console.log("4 - RELATÓRIO DE COMPRAS POR CLIENTE (READ)");
     console.log("0 - VOLTAR AO MENU PRINCIPAL");
-    console.log("================================================================");
+    console.log(
+      "================================================================",
+    );
 
     opcao = Number(prompt("ESCOLHA UMA OPÇÃO: "));
 
@@ -556,21 +614,24 @@ let opcaoPrincipal: number;
 
 console.log("================================================================");
 console.log("             SISTEMA DE GERENCIAMENTO DE E-COMMERCE             ");
-console.log("          DESENVOLVEDOR BACK-END NODE [T6] - MÓDULO 1           ");
 console.log("================================================================");
 
 do {
-  console.log("\n------------------------ MENU PRINCIPAL ------------------------");
-  console.log("1 - GERENCIAR PRODUTOS");
-  console.log("2 - GERENCIAR CLIENTES");
-  console.log("3 - GERENCIAR CARRINHO DE COMPRAS");
-  console.log("4 - GERENCIAR PEDIDOS");
+  console.log(
+    "\n------------------------ MENU PRINCIPAL ------------------------",
+  );
+  console.log("1 - PRODUTOS");
+  console.log("2 - CLIENTES");
+  console.log("3 - CARRINHO DE COMPRAS");
+  console.log("4 - PEDIDOS");
   console.log("5 - RELATÓRIOS DO SISTEMA");
   console.log(
     "6 - EXECUTAR DEMONSTRAÇÃO AUTOMÁTICA E CASOS DE TESTE (PDF 3.4)",
   );
   console.log("0 - SAIR DO SISTEMA");
-  console.log("----------------------------------------------------------------");
+  console.log(
+    "----------------------------------------------------------------",
+  );
 
   opcaoPrincipal = Number(prompt("ESCOLHA UMA OPÇÃO: "));
 
@@ -594,7 +655,7 @@ do {
       executarDemonstracaoCompleta();
       break;
     case 0:
-      console.log("\nENCERRANDO O SISTEMA. ATÉ LOGO!\n");
+      console.log("\nFINALIZADO!\n");
       break;
     default:
       console.log("\nOPÇÃO INVÁLIDA! DIGITE UM NÚMERO DE 0 A 6.");
