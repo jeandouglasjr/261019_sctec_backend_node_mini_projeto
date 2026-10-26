@@ -3,9 +3,9 @@ import { validaNome, validaEmail } from "./utils";
 
 // 3 cadastros iniciais de clientes
 const clientes: Cliente[] = [
-  { id: 1, nome: "Carlos Eduardo Silva", email: "carlos.silva@email.com" },
-  { id: 2, nome: "Ana Beatriz Souza", email: "ana.souza@email.com" },
-  { id: 3, nome: "Bruno Henrique Oliveira", email: "bruno.oliveira@email.com" },
+  { id: 1, nome: "CARLOS EDUARDO SILVA", email: "carlos.silva@email.com" },
+  { id: 2, nome: "ANA BEATRIZ SOUZA", email: "ana.souza@email.com" },
+  { id: 3, nome: "BRUNO HENRIQUE OLIVEIRA", email: "bruno.oliveira@email.com" },
 ];
 
 // contador para geração sequencial de ids únicos
@@ -17,11 +17,11 @@ function createCliente(
   email: string,
   id?: number,
 ): RespostaOperacao<Cliente> {
-  // Validação: Nome informado e não vazio
+  // nome obrigatório
   if (!validaNome(nome)) {
     return {
       sucesso: false,
-      mensagem: "Erro: O nome do cliente é obrigatório.",
+      mensagem: "ERRO: O NOME DO CLIENTE É OBRIGATÓRIO.",
     };
   }
 
@@ -29,7 +29,7 @@ function createCliente(
   if (!validaEmail(email)) {
     return {
       sucesso: false,
-      mensagem: "Erro: email inválido ou não informado.",
+      mensagem: "ERRO: EMAIL INVÁLIDO OU NÃO INFORMADO.",
     };
   }
 
@@ -42,7 +42,7 @@ function createCliente(
   if (emailJaExiste) {
     return {
       sucesso: false,
-      mensagem: `Erro: O e-mail "${email.trim()}" já está cadastrado.`,
+      mensagem: `ERRO: O E-MAIL "${email.trim().toUpperCase()}" JÁ ESTÁ CADASTRADO.`,
     };
   }
 
@@ -53,7 +53,7 @@ function createCliente(
     if (idJaExiste) {
       return {
         sucesso: false,
-        mensagem: `Erro: Já existe um cliente com esse id.`,
+        mensagem: `ERRO: JÁ EXISTE UM CLIENTE COM ESSE ID.`,
       };
     }
     idFinal = id;
@@ -74,7 +74,7 @@ function createCliente(
 
   return {
     sucesso: true,
-    mensagem: `Cliente "${novoCliente.nome}" cadastrado com sucesso (ID: ${novoCliente.id}).`,
+    mensagem: `CLIENTE "${novoCliente.nome.toUpperCase()}" CADASTRADO COM SUCESSO (ID: ${novoCliente.id}).`,
     dados: novoCliente,
   };
 }
