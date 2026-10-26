@@ -1,24 +1,24 @@
-import promptSync = require("prompt-sync");
-import { cadastrarCliente, exibirClientes } from "./clientes";
-import type { Cliente } from "./types";
+import promptSync = require("prompt-sync"); // importar o prompt-sync para entrada de dados
+import { createCliente, readCliente } from "./clientes"; // importar as funções de cadastro e leitura de clientes
+import type { Cliente } from "./types"; // importar o tipo cliente
 
-const prompt = promptSync({ sigint: true });
+const prompt = promptSync({ sigint: true }); // criar uma instância do prompt-sync para entrada de dados
 
-const nomeInput: string = prompt("Digite o nome do cliente: ");
-const emailInput: string = prompt("Digite o email do cliente: ");
+const nome: string = prompt("Digite o nome do cliente: ");
+const email: string = prompt("Digite o email do cliente: ");
 
-const novoCliente: Cliente = {
+const createClientes: Cliente = {
   id: Math.floor(Math.random() * 1000), // gera um id sequencial para o cliente
-  nome: nomeInput,
-  email: emailInput,
+  nome: nome,
+  email: email,
 };
 
-cadastrarCliente(novoCliente);
+createCliente(createClientes);
 
-const clientesCadastrados: Cliente[] = exibirClientes();
+const readClientes: Cliente[] = readCliente();
 
 console.log("Clientes cadastrados:");
-clientesCadastrados.forEach((cliente) => {
+readClientes.forEach((cliente) => {
   console.log(
     `ID: ${cliente.id}, Nome: ${cliente.nome}, Email: ${cliente.email}`,
   );

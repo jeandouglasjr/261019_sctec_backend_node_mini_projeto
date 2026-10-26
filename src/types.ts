@@ -1,12 +1,16 @@
+// CLIENTE
+
 type Cliente = {
   id: number;
   nome: string;
   email: string;
 };
 
-type ClienteList = {
+type readCliente = {
   clientes: Cliente[];
 };
+
+// PRODUTO
 
 type Produto = {
   id: number;
@@ -16,10 +20,11 @@ type Produto = {
   estoque: number;
 };
 
-type ProdutoList = {
+type readProduto = {
   produtos: Produto[];
 };
 
+// CARRINHO
 type Carrinho = {
   id: number;
   clienteId: number;
@@ -27,10 +32,11 @@ type Carrinho = {
   total: number;
 };
 
-type CarrinhoList = {
+type readCarrinho = {
   carrinhos: Carrinho[];
 };
 
+// PEDIDO
 type Pedido = {
   id: number;
   clienteId: number;
@@ -38,8 +44,17 @@ type Pedido = {
   total: number;
 };
 
-type PedidoList = {
+type readPedido = {
   pedidos: Pedido[];
 };
 
-export type { Cliente, Produto, ClienteList, ProdutoList };
+export type {
+  Cliente,
+  readCliente,
+  Produto,
+  readProduto,
+  Carrinho,
+  readCarrinho,
+  Pedido,
+  readPedido,
+};
