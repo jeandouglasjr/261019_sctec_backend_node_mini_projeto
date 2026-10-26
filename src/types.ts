@@ -19,16 +19,15 @@ type Produto = {
 // CARRINHO
 type Carrinho = {
   id: number;
-  clienteId: number;
-  produtos: Produto[];
-  total: number;
+  produto: Produto[];
+  quantidade: number;
 };
 
 // PEDIDO
 type Pedido = {
   id: number;
   clienteId: number;
-  produtos: Produto[];
+  itens: Carrinho[];
   total: number;
   data: Date;
 };

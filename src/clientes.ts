@@ -4,6 +4,9 @@ const clientes: Cliente[] = [];
 
 // cadastrar cliente
 function createCliente(cliente: Cliente): void {
+  if (!cliente.nome || !cliente.email) {
+    throw new Error("Nome e email são obrigatórios para cadastrar um cliente.");
+  }
   clientes.push(cliente);
 }
 
