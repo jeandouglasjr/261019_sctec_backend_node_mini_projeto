@@ -1,35 +1,40 @@
-// CLIENTE
-
-type Cliente = {
-  id: number;
-  nome: string;
-  email: string;
-};
-
-// PRODUTO
-
-type Produto = {
+export interface Produto {
   id: number;
   nome: string;
   categoria: string;
   preco: number;
   estoque: number;
-};
+}
 
-// CARRINHO
-type Carrinho = {
+export interface Cliente {
   id: number;
-  produto: Produto[];
+  nome: string;
+  email: string;
+}
+
+export interface ItemCarrinho {
+  idProduto: number;
   quantidade: number;
-};
+}
 
-// PEDIDO
-type Pedido = {
+export interface ItemPedido {
+  idProduto: number;
+  nome: string;
+  quantidade: number;
+  precoUnitario: number;
+  subtotal: number;
+}
+
+export interface Pedido {
   id: number;
-  clienteId: number;
-  itens: Carrinho[];
+  idCliente: number;
+  itens: ItemPedido[];
   total: number;
   data: Date;
-};
+}
 
-export type { Cliente, Produto, Carrinho, Pedido };
+export interface RespostaOperacao<T = void> {
+  sucesso: boolean;
+  mensagem: string;
+  dados?: T;
+}
