@@ -1,6 +1,6 @@
 # SCTEC - Desenvolvedor Back-End Node Turma 6 - Miniprojeto Ecommerce
 
-# Jean Douglas toledo Rodrigues Junior (jean_rodrigues-ju@estudante.sesisenai.org.br)
+# Jean Douglas Toledo Rodrigues Junior (jean_rodrigues-ju@estudante.sesisenai.org.br)
 
 # Sistema de Gerenciamento de Ecommerce com TypeScript
 
@@ -141,7 +141,7 @@ Ao executar `node dist/main.js`, o Menu Principal interativo com `do/while` é e
 ----------------------------------------------------------------
 ```
 
-### Opção 6: Demonstração Automática e Casos de Teste (Item 3.4)
+### Opção 6: Demonstração Automática e Casos de Teste
 
 Executa a validação completa do sistema:
 

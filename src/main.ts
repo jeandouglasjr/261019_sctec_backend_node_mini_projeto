@@ -606,10 +606,6 @@ function menuRelatorios(): void {
   } while (opcao !== 0);
 }
 
-// ==========================================
-// LOOP DO MENU PRINCIPAL (DO / WHILE)
-// ==========================================
-
 let opcaoPrincipal: number;
 
 console.log("================================================================");
