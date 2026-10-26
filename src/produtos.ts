@@ -5,36 +5,36 @@ import { validaNome } from "./utils";
 const produtos: Produto[] = [
   {
     id: 1,
-    nome: "Teclado Mecânico RGB",
-    categoria: "Periféricos",
+    nome: "TECLADO MECÂNICO RGB",
+    categoria: "PERIFÉRICOS",
     preco: 250.0,
     estoque: 10,
   },
   {
     id: 2,
-    nome: "Mouse Gamer 16000 DPI",
-    categoria: "Periféricos",
+    nome: "MOUSE GAMER 16000 DPI",
+    categoria: "PERIFÉRICOS",
     preco: 120.0,
     estoque: 15,
   },
   {
     id: 3,
-    nome: "Monitor 24 Pol. 144Hz",
-    categoria: "Monitores",
+    nome: "MONITOR 24 POL. 144HZ",
+    categoria: "MONITORES",
     preco: 850.0,
     estoque: 5,
   },
   {
     id: 4,
-    nome: "Headset USB 7.1",
-    categoria: "Áudio",
+    nome: "HEADSET USB 7.1",
+    categoria: "ÁUDIO",
     preco: 180.0,
     estoque: 8,
   },
   {
     id: 5,
-    nome: "Cadeira Gamer Reclinável",
-    categoria: "Móveis",
+    nome: "CADEIRA GAMER RECLINÁVEL",
+    categoria: "MÓVEIS",
     preco: 799.9,
     estoque: 4,
   },
@@ -64,7 +64,7 @@ function createProduto(
   if (!validaNome(nome)) {
     return {
       sucesso: false,
-      mensagem: "Erro: O nome do produto não pode estar vazio.",
+      mensagem: "ERRO: O NOME DO PRODUTO NÃO PODE ESTAR VAZIO.",
     };
   }
 
@@ -72,7 +72,7 @@ function createProduto(
   if (!validaNome(categoria)) {
     return {
       sucesso: false,
-      mensagem: "Erro: A categoria do produto não pode estar vazia.",
+      mensagem: "ERRO: A CATEGORIA DO PRODUTO NÃO PODE ESTAR VAZIA.",
     };
   }
 
@@ -80,7 +80,7 @@ function createProduto(
   if (isNaN(preco) || preco <= 0) {
     return {
       sucesso: false,
-      mensagem: "Erro: O preço do produto deve ser um valor maior que zero.",
+      mensagem: "ERRO: O PREÇO DO PRODUTO DEVE SER UM VALOR MAIOR QUE ZERO.",
     };
   }
 
@@ -88,7 +88,7 @@ function createProduto(
   if (isNaN(estoque) || estoque < 0) {
     return {
       sucesso: false,
-      mensagem: "Erro: O estoque não pode ser negativo.",
+      mensagem: "ERRO: O ESTOQUE NÃO PODE SER NEGATIVO.",
     };
   }
 
@@ -99,7 +99,7 @@ function createProduto(
     if (idJaExiste) {
       return {
         sucesso: false,
-        mensagem: `Erro: Já existe um produto cadastrado com o ID ${id}.`,
+        mensagem: `ERRO: JÁ EXISTE UM PRODUTO CADASTRADO COM O ID ${id}.`,
       };
     }
     idFinal = id;
@@ -122,7 +122,7 @@ function createProduto(
 
   return {
     sucesso: true,
-    mensagem: `Produto "${novoProduto.nome}" cadastrado com sucesso (ID: ${novoProduto.id}).`,
+    mensagem: `PRODUTO "${novoProduto.nome}" CADASTRADO COM SUCESSO (ID: ${novoProduto.id}).`,
     dados: novoProduto,
   };
 }
@@ -174,7 +174,7 @@ function updateProduto(
   if (!produto) {
     return {
       sucesso: false,
-      mensagem: `Erro: Produto com ID ${id} não encontrado.`,
+      mensagem: `ERRO: PRODUTO COM ID ${id} NÃO ENCONTRADO.`,
     };
   }
 
@@ -182,7 +182,7 @@ function updateProduto(
     if (!validaNome(dados.nome)) {
       return {
         sucesso: false,
-        mensagem: "Erro: O nome do produto não pode ficar vazio.",
+        mensagem: "ERRO: O NOME DO PRODUTO NÃO PODE FICAR VAZIO.",
       };
     }
     produto.nome = dados.nome.trim();
@@ -192,7 +192,7 @@ function updateProduto(
     if (!validaNome(dados.categoria)) {
       return {
         sucesso: false,
-        mensagem: "Erro: A categoria do produto não pode ficar vazia.",
+        mensagem: "ERRO: A CATEGORIA DO PRODUTO NÃO PODE FICAR VAZIA.",
       };
     }
     produto.categoria = dados.categoria.trim();
@@ -202,7 +202,7 @@ function updateProduto(
     if (isNaN(dados.preco) || dados.preco <= 0) {
       return {
         sucesso: false,
-        mensagem: "Erro: O preço do produto deve ser maior que zero.",
+        mensagem: "ERRO: O PREÇO DO PRODUTO DEVE SER MAIOR QUE ZERO.",
       };
     }
     produto.preco = dados.preco;
@@ -212,7 +212,7 @@ function updateProduto(
     if (isNaN(dados.estoque) || dados.estoque < 0) {
       return {
         sucesso: false,
-        mensagem: "Erro: O estoque não pode ser negativo.",
+        mensagem: "ERRO: O ESTOQUE NÃO PODE SER NEGATIVO.",
       };
     }
     produto.estoque = dados.estoque;
@@ -220,7 +220,7 @@ function updateProduto(
 
   return {
     sucesso: true,
-    mensagem: `Produto ID ${id} atualizado com sucesso.`,
+    mensagem: `PRODUTO ID ${id} ATUALIZADO COM SUCESSO.`,
     dados: produto,
   };
 }
@@ -242,14 +242,14 @@ function deleteProduto(id: number): RespostaOperacao {
   if (indice === -1) {
     return {
       sucesso: false,
-      mensagem: `Erro: Produto com ID ${id} não encontrado para remoção.`,
+      mensagem: `ERRO: PRODUTO COM ID ${id} NÃO ENCONTRADO PARA REMOÇÃO.`,
     };
   }
 
   const [removido] = produtos.splice(indice, 1);
   return {
     sucesso: true,
-    mensagem: `Produto "${removido?.nome ?? id}" removido com sucesso.`,
+    mensagem: `PRODUTO "${removido?.nome ?? id}" REMOVIDO COM SUCESSO.`,
   };
 }
 
