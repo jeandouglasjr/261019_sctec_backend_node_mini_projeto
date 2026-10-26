@@ -19,7 +19,5 @@ const readClientes: Cliente[] = readCliente();
 
 console.log("Clientes cadastrados:");
 readClientes.forEach((cliente) => {
-  console.log(
-    `ID: ${cliente.id}, Nome: ${cliente.nome}, Email: ${cliente.email}`,
-  );
+  console.log(cliente);
 });
