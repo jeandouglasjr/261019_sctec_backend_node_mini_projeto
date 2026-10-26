@@ -131,10 +131,10 @@ Ao executar `node dist/main.js`, o Menu Principal interativo com `do/while` é e
 ================================================================
 
 ------------------------ MENU PRINCIPAL ------------------------
-1 - GERENCIAR PRODUTOS
-2 - GERENCIAR CLIENTES
-3 - GERENCIAR CARRINHO DE COMPRAS
-4 - GERENCIAR PEDIDOS
+1 - PRODUTOS
+2 - CLIENTES
+3 - CARRINHO DE COMPRAS
+4 - PEDIDOS
 5 - RELATÓRIOS DO SISTEMA
 6 - EXECUTAR DEMONSTRAÇÃO AUTOMÁTICA E CASOS DE TESTE
 0 - SAIR DO SISTEMA
