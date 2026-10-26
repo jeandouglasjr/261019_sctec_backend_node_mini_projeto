@@ -6,7 +6,7 @@ const produtos: Produto[] = [];
 // cadastrar produto
 function createProduto(produto: Produto): boolean {
   if (!validaNome(produto.nome) || !validaNome(produto.categoria)) {
-    console.log("Erro: Todos os campos do produto são obrigatórios.");
+    console.log("Erro: Nome e/ou Categoria do produto são obrigatórios.");
     return false;
   } else if (produto.preco < 0) {
     console.log("Erro: Preço deve ser maior que zero.");
